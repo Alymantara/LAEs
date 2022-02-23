@@ -1227,7 +1227,7 @@ class LAE():
                         bj=None,bnH=None,baA=None,
                         bLLS=None,tau_Q=None,M1450min=None,
                         M1450max=None,bG=None,tau_G=None,
-                        e24=None,savefile=None,loadfile=None):
+                        e24=None,savefile=None,loadfile=None,verbose=False):
 
         if Gammai == None:
             Gammai = 0.249e-12
@@ -1295,7 +1295,7 @@ class LAE():
                 dkCorr.append(dGammaCorr[masku][0])
                 dkCorr_nsn.append(dGammaCorr_nsn[masku][0])
                 dkCorr_sn.append(dGammaCorr_sn[masku][0])
-                if ctr%10 == 0: print(ctr,self.fk.size,k)
+                if (ctr%10 == 0) & verbose: print(ctr,self.fk.size,k)
                 ctr +=1
             self.dGammakCorr = np.array(dkCorr)
             self.dGammakCorr_nsn = np.array(dkCorr_nsn)
